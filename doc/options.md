@@ -24,6 +24,7 @@ Here is a full list in the same order they are applied while processing css:
 - [space-after-declaration](#space-after-declaration)
 - [block-indent](#block-indent)
 - [sort-order-fallback](#sort-order-fallback)
+- [sort-order-group-size](#sort-order-group-size)
 - [sort-order](#sort-order)
 - [space-before-closing-brace](#space-before-closing-brace)
 - [tab-size](#tab-size)
@@ -430,6 +431,56 @@ a {
     color:tomato;
     height: 100px;
     top:0;
+}
+```
+
+## sort-order-group-size
+
+Set a minimum size of declaration group that should be divided from other
+groups with a new line.  
+If a group has less declarations than `sort-order-group-size` sets, it gets
+merged to the previous group.
+
+Acceptable values:
+
+* `{Number}` — number of declarations in a group.
+
+Example: `{ 'sort-order-group-size': 2, 'sort-order': [['top'], ['color'], ['...']] }`
+
+```scss
+// Before:
+a {
+    height: 100px;
+    color: tomato;
+    top: 0;
+    background: black;
+}
+
+// After:
+a {
+    top:0;
+    color:tomato;
+
+    height: 100px;
+    background: black;
+}
+```
+
+Example: `{ 'sort-order-group-size': 2, 'sort-order': [['top', 'color'], ['...']] }`
+
+```scss
+// Before:
+a {
+    height: 100px;
+    color: tomato;
+    top: 0;
+}
+
+// After:
+a {
+    top:0;
+    color:tomato;
+    height: 100px;
 }
 ```
 

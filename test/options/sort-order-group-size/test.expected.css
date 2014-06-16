@@ -1,0 +1,10 @@
+.panda {
+    color: black;
+    color: white;
+    width: 1000px;
+    position: absolute;
+
+    top: 0;
+    left: 0;
+    background: tomato;
+    }
