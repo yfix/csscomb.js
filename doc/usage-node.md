@@ -33,7 +33,7 @@ var comb = new Comb('yandex');
 
 // This is shortcut for:
 var comb = new Comb();
-var config = comb.getConfig('yandex');
+var config = Comb.getConfig('yandex');
 comb.configure(config);
 ```
 
@@ -48,9 +48,11 @@ var comb = new Comb();
 comb.configure(config);
 ```
 
-## getConfig(name)
+## Comb.getConfig(name)
 
 Get one of predefined configs.
+
+Note that this is a static method.
 
 Parameters:
 
@@ -61,119 +63,16 @@ Example: Configure CSScomb using predefined `zen` sort order that is slightly
 modified.
 
 ```js
-var config = comb.getConfig('zen');
+var config = Comb.getConfig('zen');
 config['always-semicolon'] = true;
 comb.configure(config);
 ```
 
-## configure(config)
-
-Configure CSScomb.
-
-Parameters:
-
-* `{Object} config` — valid JSON object.
-
-Example: Create and pass a config object to the method
-
-```js
-var config = { 'always-semicolon': true };
-comb.configure(config);
-```
-
-Example: Use config stored in a file
-
-```js
-var config = require('path/to/.csscomb.json');
-comb.configure(config);
-```
-
-See [configuration docs](configuration.md) for more information.
-
-## processPath(path)
-
-Comb a file or a directory.
-
-Parameters:
-
-* `{String} path` — path to file or directory
-
-**Warning:** This method rewrites the file.
-
-Example: Process one file
-
-```js
-comb.processPath('main.scss');
-```
-
-Example: Process whole directory
-
-```js
-comb.processPath('assets/css');
-```
-
-## processDirectory(path)
-
-Comb all supported files in a directory.
-
-Parameters:
-
-* `{String} path` — path to a directory
-
-**Warning:** This method rewrites the files.
-
-Example:
-
-```js
-comb.processDirectory('public/css');
-```
-
-## processFile(path)
-
-Comb one file.
-
-Parameters:
-
-* `{String} path` — path to a file
-
-If file's syntax is not supported, the file will be ignored.
-
-**Warning:** This method rewrites the file.
-
-Example:
-
-```js
-comb.processFile('print.less');
-```
-
-## processString(string, syntax, filename)
-
-Comb a stylesheet.
-
-Parameters:
-
-* `{String} text` — stylesheet that should be combed.
-* `{String} syntax` — style's syntax. Optional. Default value is `css`.
-* `{String} filename` — file's name that is used to print possible errors.
-   Optional.
-
-Example: Comb a css string
-
-```js
-var css = 'a {top: 0; left: 0}';
-var combedCSS = comb.processString(css);
-```
-
-Example: Comb a less string
-
-```js
-var less = '@color: tomato; a {color: @color}';
-var combedLESS = comb.processString(less, 'less');
-```
-
-## detectInFile(path, options)
+## Comb.detectInFile(path, options)
 
 Get config options that can be detected in a file.
+
+Note that this is a static method.
 
 Parameters:
 
@@ -188,9 +87,11 @@ var config = comb.detectInFile('template.css');
 comb.configure(config);
 ```
 
-## detectInString(string, options)
+## Comb.detectInString(string, options)
 
 Get config options that can be detected in a string.
+
+Note that this is a static method.
 
 Parameters:
 
@@ -205,3 +106,8 @@ var css = 'a {top: 0; left: 0}';
 var config = comb.detectInString(css);
 comb.configure(config);
 ```
+
+## Public methods
+
+For the list of public methods and examples of their usage, see [CSScomb Core docs](https://github.com/csscomb/core).
+
