@@ -1,5 +1,17 @@
 # Changelog
 
+## 3.0.3 - 2014-09-29
+**Thanks to
+[@kizu](https://github.com/kizu),
+[@necolas](https://github.com/necolas)**
+- Improved README
+- Added non-essential files to npmignore
+- Renamed `CONTRIBUTE.md` to `CONTRIBUTING.md`
+- Fixed unwanted removal of empty lines between nested rulesets (#317)
+
+## 3.0.2 - 2014-09-21
+- Fixed Gonzales PE version
+
 ## 3.0.1 - 2014-08-18
 **Thanks to
 [@mishanga](https://github.com/mishanga),
@@ -22,7 +34,7 @@ New:
 
 - Sass support
 - Leftovers (#160)
-- Use [CSScomb Core](https://github/csscomb/core)
+- Use [CSScomb Core](https://github.com/csscomb/core)
 - Plugins API (with `.use()` method)
 - `sort-order-fallback` (alphabetical sort order)
 - `space-before-colon`
